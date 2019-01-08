@@ -1,25 +1,49 @@
-OpenFaaS guides
+OpenFaaS guides & documentation
 ================
 
-This page is a collection of our key blog posts, tutorials and guides while we prepare a [dedicated site](https://github.com/openfaas/faas/issues/253) for documentation. For other queries please get in touch for a Slack invite or ping [@open_faas](https://twitter.com/open_faas) on Twitter.
+## This page is deprecated.
+
+Please see the [OpenFaaS docs site](https://docs.openfaas.com/).
+
+## For archival purposes
+
+This page is a collection of our key blog posts, tutorials and guides while we prepare a [dedicated site](https://github.com/openfaas/faas/issues/253) for documentation. For other queries please get in touch for a Slack invite or ping [@openfaas](https://twitter.com/openfaas) on Twitter.
 
 Suggestions for new topics are welcome. Please also check the [Issue tracker](https://github.com/openfaas/faas/issues).
 
-## Beginner guides
+## Deployment guides (start here)
 
-* [Kubernetes deployment](https://github.com/openfaas/faas/blob/master/guide/deployment_k8s.md)
+### A foreword on security
 
-* [Docker Swarm deployment](https://github.com/openfaas/faas/blob/master/guide/deployment_swarm.md)
+These instructions are for a development environment. If you plan to expose OpenFaaS on the public Internet you need to enable basic authentication with a proxy such as Kong or Traefik at a minimum. TLS is also highly recomended and freely available with LetsEncrypt.org. [Kong guide](https://github.com/openfaas/faas/blob/master/guide/kong_integration.md) [Traefik guide](https://github.com/openfaas/faas/blob/master/guide/traefik_integration.md).
+
+> Note: We are also looking to [automate authentication "out the box"](https://github.com/openfaas/faas/issues/349) to cover edge cases.
+
+* [Kubernetes deployment](deployment_k8s.md)
+
+* [Docker Swarm deployment](deployment_swarm.md)
+
+* [DigitalOcean deployment (with Swarm)](deployment_digitalocean.md)
 
 ## Intermediate
 
-* [Chaining functions](https://github.com/openfaas/faas/blob/master/guide/chaining_functions.md)
+* [Workflows / Chaining functions](chaining_functions.md)
 
-* [Troubleshooting](https://github.com/openfaas/faas/blob/master/guide/troubleshooting.md)
+* [Interacting with other containers/services](interactions.md)
 
-* [Asynchronous functions with NATS Streaming](https://github.com/openfaas/faas/blob/master/guide/asynchronous.md)
+* [Troubleshooting](troubleshooting.md)
 
-* [Hardening OpenFaaS with Kong & TLS](https://github.com/openfaas/faas/blob/master/guide/kong_integration.md)
+* [Asynchronous functions with NATS Streaming](asynchronous.md)
+
+* [Submit a function to the OpenFaaS Function Store](https://github.com/openfaas/store)
+
+* [Secrets with OpenFaaS and Docker Swarm](https://github.com/openfaas/faas/blob/master/guide/secure_secret_management.md)
+
+* [Hardening OpenFaaS with Kong & TLS](kong_integration.md)
+
+* [Reference documentation for Function Watchdog](../watchdog/)
+
+* [An Introduction to Serverless DevOps with OpenFaaS](https://hackernoon.com/an-introduction-to-serverless-devops-with-openfaas-b978ab0eb2b)
 
 * WIP [Debugging Functions](https://github.com/openfaas/faas/issues/223)
 
@@ -39,13 +63,15 @@ Suggestions for new topics are welcome. Please also check the [Issue tracker](ht
 
 * [OpenFaaS presents to CNCF Serverless workgroup](https://blog.alexellis.io/openfaas-cncf-workgroup/)
 
+* [An Introduction to Serverless DevOps with OpenFaaS](https://hackernoon.com/an-introduction-to-serverless-devops-with-openfaas-b978ab0eb2b)
+
 ### Hands-on with containers as functions
 
 * [Serverless sorcery with ImageMagick](https://blog.alexellis.io/serverless-imagemagick/)
 
-### Fine-tuning
+### High-throughput
 
-* [OpenFaaS accelerates serverless Java with AfterBurn](https://blog.alexellis.io/openfaas-serverless-acceleration/)
+* [Next-generation Watchdog (of-watchdog)](http://docs.openfaas.com/architecture/watchdog/#of-watchdog)
 
 ### Raspberry Pi & ARM
 
@@ -53,4 +79,10 @@ Suggestions for new topics are welcome. Please also check the [Issue tracker](ht
 
 ## Extend OpenFaaS
 
-* [Build a third-party provider](https://github.com/openfaas/faas/blob/master/guide/backends.md)
+* [Build a third-party provider](backends.md)
+
+### Deprecated
+
+Afterburn is replaced by the of-watchdog listed above.
+
+* [OpenFaaS accelerates serverless Java with AfterBurn](https://blog.alexellis.io/openfaas-serverless-acceleration/)
